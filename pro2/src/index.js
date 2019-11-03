@@ -4,7 +4,9 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+const cities = ['Riyadh','Jeddah','Dammam','Al-Khobar','Dhahran','Al-Ahsa','Abha','Al Baha','Jizan','Najran','Hail']
+
+ReactDOM.render(<App cities={cities}/>, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

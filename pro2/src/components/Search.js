@@ -10,6 +10,7 @@ class Search extends Component {
                 <input type="text"
                 onChange={this.props.onChange}
                  value={this.props.value}></input>
+                 <button>Ok</button>
             </div>
         )
     }

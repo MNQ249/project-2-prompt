@@ -3,19 +3,46 @@ import logo from './logo.svg';
 import './App.css';
 import CityList from './components/CityList';
 import Search from './components/Search';
+import MyList from './components/MyList';
+
 
 
 
 class App extends Component {
+
+constructor(props){
+super(props)
+this.state = {
+  
+    searchValue: '',
+    cityToDisplay: this.props.myCity,
+    filteredCity:[]
+}
+}
+handleSearchChange = (e) => {
+  const textValue = e.target.value;
+
+  const filteredCity = this.props.myCity.filter(function(city) {
+    return this.props.myCity.toLowerCase().includes(textValue.toLowerCase());
+  });
+
+  this.setState({
+    searchValue: textValue,
+    filteredCity: filteredCity
+  });
+}
+
 render(){
 
-const cities = ['Riyadh','Jeddah','Dammam','Al-Khobar','Dhahran','Al-Ahsa','Abha','Al Baha','Jizan','Najran','Hail']
+
 
   return (
     <div className="App">
       <h1> List of Cities</h1>
-      <Search/>
-       <CityList myCity = {cities}/>
+      <Search
+          value={this.state.searchValue}
+          onChange={this.handleSearchChange} />
+        <CityList myCity={this.state.filteredCity}/>
     </div>
   );
 }
