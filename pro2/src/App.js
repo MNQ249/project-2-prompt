@@ -15,15 +15,15 @@ super(props)
 this.state = {
   
     searchValue: '',
-    cityToDisplay: this.props.myCity,
+    cityToDisplay: this.props.cities,
     filteredCity:[]
 }
 }
 handleSearchChange = (e) => {
   const textValue = e.target.value;
 
-  const filteredCity = this.props.myCity.filter(function(city) {
-    return this.props.myCity.toLowerCase().includes(textValue.toLowerCase());
+  const filteredCity = this.props.cities.filter(function(city) {
+    return city.toLowerCase().includes(textValue.toLowerCase());
   });
 
   this.setState({
