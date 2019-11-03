@@ -7,10 +7,13 @@ class Search extends Component {
                 <label>
                     Search city:
                 </label>
-                <input type="text" value=""></input>
+                <input type="text"
+                onChange={this.props.onChange}
+                 value={this.props.value}></input>
             </div>
         )
     }
 };
 
 export default Search;
+

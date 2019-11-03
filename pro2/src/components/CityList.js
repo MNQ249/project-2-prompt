@@ -2,6 +2,7 @@ import React from 'react';
 import ListItem from './ListItem';
 
 
+
 const CityList = props =>{
 
         const items = props.myCity.map(function(item, index){
