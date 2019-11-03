@@ -4,11 +4,10 @@ import CityList from './CityList';
 
 class MyList extends Component {
   constructor(props) {
+      
     super(props);
-
-    // Initial state copied from component props.
     this.state = {
-      toDoItems: this.props.myCity,
+      toDoItems: this.props.items,
       newItem: ''
     }
   }
@@ -30,7 +29,7 @@ class MyList extends Component {
   addItem = (e) => {
     console.log('Add Item');
     this.setState({
-      toDoItems: [...this.state.toDoItems, this.state.newItem],
+      toDoItems: [...this.state.items, this.state.newItem],
       newItem: ''
     });
   }
@@ -40,7 +39,7 @@ class MyList extends Component {
     return (
       <div>
         <h1>Things I should start doing:</h1>
-        <CityList todoItems={this.state.toDoItems} />
+        <CityList todoItems={this.state.items} />
         <br />
 
         <input type="text"

@@ -9,9 +9,7 @@ const CityList = props =>{
         })
     return(
         <ul>
-
-            {items}
-            
+            {items} 
         </ul>
     )
 

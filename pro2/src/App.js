@@ -1,11 +1,12 @@
-import React from 'react';
+import React, {Component} from 'react';
 import logo from './logo.svg';
 import './App.css';
 import CityList from './components/CityList';
 import Search from './components/Search';
 
 
-function App() {
+class App extends Component {
+render(){
 
 const cities = ['Riyadh','Jeddah','Dammam','Al-Khobar','Dhahran','Al-Ahsa','Abha','Al Baha','Jizan','Najran','Hail']
 
@@ -16,6 +17,7 @@ const cities = ['Riyadh','Jeddah','Dammam','Al-Khobar','Dhahran','Al-Ahsa','Abha
        <CityList myCity = {cities}/>
     </div>
   );
+}
 }
 
 export default App;
