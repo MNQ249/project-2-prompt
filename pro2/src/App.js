@@ -43,6 +43,7 @@ render(){
           value={this.state.searchValue}
           onChange={this.handleSearchChange} />
         <CityList myCity={this.state.filteredCity}/>
+        
     </div>
   );
 }

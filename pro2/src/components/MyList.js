@@ -1,61 +1,66 @@
-// import React, { Component } from 'react';
-// import CityList from './CityList';
+import React, { Component } from 'react';
+import CityList from './CityList';
+import App from '../App';
+import Search from './Search';
 
 
-// class MyList extends Component {
-//   constructor(props) {
-//     super(props);
-//     this.state = {
-//       toDoItems: this.props.myCity,
-//       newItem: ''
-//     }
-//   }
 
-//   clearList = (e) => {
-//     this.setState({
-//       toDoItems: []
-//     });
-//   }
+class MyList extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      toDoItems: this.props.cities,
+      newItem: ''
+    }
+  }
 
-//   onTextBoxChange = (e) => {
-//     console.log('On Text Change', e.target.value);
+  clearList = (e) => {
+    this.setState({
+      toDoItems: []
+    });
+  }
 
-//     this.setState({
-//       newItem: e.target.value
-//     });
-//   }
+  onTextBoxChange = (e) => {
+    console.log('On Text Change', e.target.value);
 
-//   addItem = (e) => {
-//     console.log('Add Item');
-//     this.setState({
-//       toDoItems: [...this.state.toDoItems, this.state.newItem],
-//       newItem: ''
-//     });
-//   }
+    this.setState({
+      newItem: e.target.value
+    });
+  }
 
-//   render() {
+  addItem = (e) => {
+    console.log('Add Item');
+    this.setState({
+      toDoItems: [...this.state.toDoItems, this.state.newItem],
+      newItem: ''
+    });
+  }
 
-//     return (
-//       <div>
-//         <h1>Things I should start doing:</h1>
-//         <CityList todoItems={this.state.toDoItems} />
-//         <br />
+  render() {
 
-//         <input type="text"
-//           value={this.state.newItem}
-//           onChange={this.onTextBoxChange}
-//           placeholder="Type a task here!" />
+    return (
+      <div>
+          <label> name city</label>
+        
+        < todoItems={this.state.toDoItems} />
+        <br />
 
-//         <button onClick={this.addItem}>Add Task!</button>
+        <input type="text"
+          value={this.state.newItem}
+          onChange={this.onTextBoxChange}
+          placeholder="Type a task here!" />
+    
+        <button onClick={this.addItem}>Add Task!</button>
+      
 
-//         <br />
+        <br />
 
-//         <button onClick={this.clearList}>
-//           clear Everything
-//         </button>
-//       </div>
-//     )
-//   }
-// }
+        <button onClick={this.clearList}>
+          clear Everything
+        </button>
+      </div>
+    )
+  }
+}
 
-// export default MyList;
+export default MyList;
