@@ -1,5 +1,4 @@
 const BookDB = {
-    // api_key: '<REPLACE_THIS_WITH_TMDB_API_KEY>',
     books: [
       {
         "id": 346364,
