@@ -32,6 +32,12 @@ handleSearchChange = (e) => {
   });
 }
 
+clearList = (e) => {
+  this.setState({
+    filteredCity: []
+  });
+}
+
 render(){
 
 
@@ -43,7 +49,11 @@ render(){
           value={this.state.searchValue}
           onChange={this.handleSearchChange} />
         <CityList myCity={this.state.filteredCity}/>
-        
+        <MyList city={this.state.searchValue} />
+
+        <button onClick={this.clearList}>
+          clear Everything
+        </button>
     </div>
   );
 }

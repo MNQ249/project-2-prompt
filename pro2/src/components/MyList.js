@@ -9,55 +9,32 @@ class MyList extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      toDoItems: this.props.cities,
-      newItem: ''
+      city: '',
+      cityList: this.props.myCity
     }
   }
 
-  clearList = (e) => {
-    this.setState({
-      toDoItems: []
-    });
-  }
-
-  onTextBoxChange = (e) => {
-    console.log('On Text Change', e.target.value);
-
-    this.setState({
-      newItem: e.target.value
-    });
-  }
-
   addItem = (e) => {
-    console.log('Add Item');
+    console.log('Add City');
     this.setState({
-      toDoItems: [...this.state.toDoItems, this.state.newItem],
-      newItem: ''
+      city: this.props.city,
     });
-  }
+}
 
-  render() {
 
+render() {
+    
+    console.log(this.state.city);
     return (
       <div>
-          <label> name city</label>
+         
         
-        < todoItems={this.state.toDoItems} />
+        
+        <br />
+        <button onClick={this.addItem}>Add City!</button>
         <br />
 
-        <input type="text"
-          value={this.state.newItem}
-          onChange={this.onTextBoxChange}
-          placeholder="Type a task here!" />
-    
-        <button onClick={this.addItem}>Add Task!</button>
-      
 
-        <br />
-
-        <button onClick={this.clearList}>
-          clear Everything
-        </button>
       </div>
     )
   }

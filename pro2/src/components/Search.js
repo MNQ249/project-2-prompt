@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import MyList from './MyList';
 
 class Search extends Component {
     render() {
