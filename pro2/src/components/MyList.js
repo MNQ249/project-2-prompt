@@ -11,6 +11,7 @@ class MyList extends Component {
     this.state = {
       city: '',
       cityList: this.props.myCity
+      
     }
   }
 
